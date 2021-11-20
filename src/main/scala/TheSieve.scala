@@ -13,8 +13,8 @@ object TheSieve {
   val starter:LazyList[Int] = LazyList.from(2)
 
   /**
-   * This is the process of working out the Sieve algo. It uses recursion takes the tail of current list and filters out
-   * the the first element of the tail if it is a composite number of previous heads.
+   * This is the process of working out the Sieve algo. It uses recursion that takes the tail of current list and filters out
+   * the first element of the tail if it is a composite number of previous heads.
    * @param table the table where we want to cross out composites.
    * @return a new table that has composites crossed out.
    */
