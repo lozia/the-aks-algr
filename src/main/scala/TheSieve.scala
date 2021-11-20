@@ -13,11 +13,14 @@ object TheSieve {
   val starter:LazyList[Int] = LazyList.from(2)
 
   /**
-   * This is the process of working out the Sieve algo.
+   * This is the process of working out the Sieve algo. It uses recursion takes the tail of current list and filters out
+   * the the first element of the tail if it is a composite number of previous heads.
    * @param table the table where we want to cross out composites.
    * @return a new table that has composites crossed out.
    */
-  def filter_out_composites(table: LazyList[Int]): LazyList[Int] = table.head #:: filter_out_composites(table.tail filter(n => n % table.head != 0))
+  def filter_out_composites(table: LazyList[Int]): LazyList[Int] = {
+    table.head #:: filter_out_composites(table.tail filter(n => n % table.head != 0))
+  }
 
   /**
    * This function should be the actual one to use if requires a final table with [primes < n] in it.
